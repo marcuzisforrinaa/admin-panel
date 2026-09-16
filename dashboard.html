@@ -5,58 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body class="dashboard-body">
 
-    <!-- Left Sidebar (မင်းပြထားတဲ့ ပုံအတိုင်း Blue Design) -->
-    <div class="sidebar">
-        <div class="menu-items">
-            <a href="#" id="menu-theme" class="menu-item hide" onclick="switchTab('theme')">theme</a>
-            <a href="#" id="menu-player" class="menu-item hide" onclick="switchTab('player')">player</a>
-            <a href="#" id="menu-partner" class="menu-item hide" onclick="switchTab('partner')">partner</a>
-            <a href="#" id="menu-agent" class="menu-item hide" onclick="switchTab('agent')">Agent</a>
-            <a href="#" id="menu-match" class="menu-item hide" onclick="switchTab('match')">Match</a>
-        </div>
-        <button class="logout-btn" onclick="logout()">Logout</button>
-    </div>
-
-    <!-- Right Main Content Area -->
-    <div class="main-content">
-        <div id="content-welcome" class="content-section">
-            <h1>Welcome!</h1>
-            <p id="userRoleDisplay"></p>
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">⚡</div>
+            <h2>BET-X <span>ADMIN</span></h2>
         </div>
 
-        <div id="content-theme" class="content-section hide">
-            <h2>Theme Management</h2>
-            <p>Theme ချိန်ညှိရန် စာမျက်နှာ</p>
-        </div>
+        <nav class="menu-items">
+            <a href="#" id="menu-theme" class="menu-item hide" onclick="switchTab('theme')">
+                <span class="icon">🎨</span> Theme Management
+            </a>
+            <a href="#" id="menu-player" class="menu-item hide" onclick="switchTab('player')">
+                <span class="icon">👥</span> Player Control
+            </a>
+            <a href="#" id="menu-partner" class="menu-item hide" onclick="switchTab('partner')">
+                <span class="icon">🤝</span> Partner Hub
+            </a>
+            <a href="#" id="menu-agent" class="menu-item hide" onclick="switchTab('agent')">
+                <span class="icon">💼</span> Agent Portal
+            </a>
+            <a href="#" id="menu-match" class="menu-item hide" onclick="switchTab('match')">
+                <span class="icon">⚽</span> Match & Bets
+            </a>
+        </nav>
 
-        <div id="content-player" class="content-section hide">
-            <h2>Player Management</h2>
-            <p>Player အကောင့်များ ထိန်းချုပ်ရန် စာမျက်နှာ</p>
+        <div class="sidebar-footer">
+            <button class="logout-btn" onclick="logout()">
+                <span>🚪</span> Logout
+            </button>
         </div>
+    </aside>
 
-        <div id="content-partner" class="content-section hide">
-            <h2>Partner Management</h2>
-            <p>Partner အကောင့်များ ထိန်းချုပ်ရန် စာမျက်နှာ</p>
-        </div>
+    <!-- Right Main Wrapper -->
+    <main class="main-wrapper">
+        <!-- Top Navigation Bar -->
+        <header class="topbar">
+            <div class="topbar-title">Dashboard Overview</div>
+            <div class="user-profile">
+                <div class="avatar" id="avatarLetter">A</div>
+                <div class="user-info">
+                    <span class="user-name" id="userNameDisplay">Admin</span>
+                    <span class="user-role-badge" id="userRoleBadge">ROLE</span>
+                </div>
+            </div>
+        </header>
 
-        <div id="content-agent" class="content-section hide">
-            <h2>Agent Management</h2>
-            <p>Agent အကောင့်များ ထိန်းချုပ်ရန် စာမျက်နှာ</p>
-        </div>
+        <!-- Dynamic Content Sections -->
+        <section class="content-body">
+            <!-- Welcome View -->
+            <div id="content-welcome" class="content-section">
+                <div class="welcome-card">
+                    <h1>Welcome Back! 👋</h1>
+                    <p id="userRoleDisplay">Logged in successfully.</p>
+                </div>
 
-        <div id="content-match" class="content-section hide">
-            <h2>Match Management</h2>
-            <p>ပွဲစဉ်များနှင့် Fake Money လောင်းကြေးများ ထိန်းချုပ်ရန် စာမျက်နှာ</p>
-        </div>
-    </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">Total Players</div>
+                        <div class="stat-value">1,248</div>
+                        <div class="stat-change positive">+12% this week</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">Active Agents</div>
+                        <div class="stat-value">84</div>
+                        <div class="stat-change positive">+5 new</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">Live Matches</div>
+                        <div class="stat-value">16</div>
+                        <div class="stat-change">Real-time</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">Fake Points Circulated</div>
+                        <div class="stat-value">50,000,000</div>
+                        <div class="stat-change positive">System Normal</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Sections -->
+            <div id="content-theme" class="content-section hide">
+                <div class="panel-card">
+                    <h2>🎨 Theme Management Panel</h2>
+                    <p>Player Website Visual Settings & Custom Themes</p>
+                </div>
+            </div>
+
+            <div id="content-player" class="content-section hide">
+                <div class="panel-card">
+                    <h2>👥 Player Management Panel</h2>
+                    <p>Manage User Accounts, Fake Money Balances & Ban Status</p>
+                </div>
+            </div>
+
+            <div id="content-partner" class="content-section hide">
+                <div class="panel-card">
+                    <h2>🤝 Partner Management Panel</h2>
+                    <p>API Integration, Commission Rates & Partner Analytics</p>
+                </div>
+            </div>
+
+            <div id="content-agent" class="content-section hide">
+                <div class="panel-card">
+                    <h2>💼 Agent Management Panel</h2>
+                    <p>Agent Sub-account Creation & Credit Distribution</p>
+                </div>
+            </div>
+
+            <div id="content-match" class="content-section hide">
+                <div class="panel-card">
+                    <h2>⚽ Match & Betting Management</h2>
+                    <p>Create Matches, Set Odds, Result Verification & Win Payouts</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="app.js"></script>
     <script>
-        // Dashboard ရောက်ရင် Role အလိုက် UI ကို စစ်ဆေးစတင်မည်
         window.onload = function() {
             initDashboard();
         };
