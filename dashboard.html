@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="dashboard-body">
+
+    <!-- Left Sidebar (မင်းပြထားတဲ့ ပုံအတိုင်း Blue Design) -->
+    <div class="sidebar">
+        <div class="menu-items">
+            <a href="#" id="menu-theme" class="menu-item hide" onclick="switchTab('theme')">theme</a>
+            <a href="#" id="menu-player" class="menu-item hide" onclick="switchTab('player')">player</a>
+            <a href="#" id="menu-partner" class="menu-item hide" onclick="switchTab('partner')">partner</a>
+            <a href="#" id="menu-agent" class="menu-item hide" onclick="switchTab('agent')">Agent</a>
+            <a href="#" id="menu-match" class="menu-item hide" onclick="switchTab('match')">Match</a>
+        </div>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Right Main Content Area -->
+    <div class="main-content">
+        <div id="content-welcome" class="content-section">
+            <h1>Welcome!</h1>
+            <p id="userRoleDisplay"></p>
+        </div>
+
+        <div id="content-theme" class="content-section hide">
+            <h2>Theme Management</h2>
+            <p>Theme ချိန်ညှိရန် စာမျက်နှာ</p>
+        </div>
+
+        <div id="content-player" class="content-section hide">
+            <h2>Player Management</h2>
+            <p>Player အကောင့်များ ထိန်းချုပ်ရန် စာမျက်နှာ</p>
+        </div>
+
+        <div id="content-partner" class="content-section hide">
+            <h2>Partner Management</h2>
+            <p>Partner အကောင့်များ ထိန်းချုပ်ရန် စာမျက်နှာ</p>
+        </div>
+
+        <div id="content-agent" class="content-section hide">
+            <h2>Agent Management</h2>
+            <p>Agent အကောင့်များ ထိန်းချုပ်ရန် စာမျက်နှာ</p>
+        </div>
+
+        <div id="content-match" class="content-section hide">
+            <h2>Match Management</h2>
+            <p>ပွဲစဉ်များနှင့် Fake Money လောင်းကြေးများ ထိန်းချုပ်ရန် စာမျက်နှာ</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Dashboard ရောက်ရင် Role အလိုက် UI ကို စစ်ဆေးစတင်မည်
+        window.onload = function() {
+            initDashboard();
+        };
+    </script>
+</body>
+</html>

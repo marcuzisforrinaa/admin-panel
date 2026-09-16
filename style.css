@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Login Page Styling */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f6f9;
+}
+
+.login-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 350px;
+}
+
+.login-card h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0090ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0077e6;
+}
+
+.error-msg {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Dashboard Layout Styling (မင်းရဲ့ ပုံအတိုင်း) */
+.dashboard-body {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 180px;
+    background-color: #0090ff; /* ပုံထဲက အပြာရောင် */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 45px; /* ပုံထဲကလို အကွာအဝေး */
+}
+
+.menu-item {
+    color: black;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.menu-item:hover {
+    color: white;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+.main-content h1 {
+    font-size: 70px; /* ပုံထဲကလို "Welcome!" စာသားအကြီး */
+    font-weight: 900;
+    color: #333;
+}
+
+.logout-btn {
+    background-color: #ff3b30;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Helper Class */
+.hide {
+    display: none !important;
+}
