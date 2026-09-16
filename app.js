@@ -1,5 +1,5 @@
 // Supabase Credentials
-const SUPABASE_URL = 'https://icxchdxawuketsxngkzksupabase.co';
+const SUPABASE_URL = 'https://icxchdxawuketsxngkzk.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljeGNoZHhhd3VrZXRzeG5na3prIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk1NDk4OTEsImV4cCI6MjEwNTEyNTg5MX0.4oVJAooaZg8lp8UkzbojfF8vFd4BNZ4j4yhyLpg8hvk';
 
 // Supabase Client Connection
