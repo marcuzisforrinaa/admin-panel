@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
+    <title>Admin Portal Login</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Supabase JS Client Library -->
+    <!-- Supabase JS CDN Library -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body class="login-body">
 
     <div class="login-card">
         <h2>Admin Portal Login</h2>
-        <form id="loginForm">
+        <!-- onsubmit="return false;" က Page Reload ဖြစ်ခြင်းကို သေချာ တားဆီးပေးသည် -->
+        <form onsubmit="return false;">
             <div class="input-group">
                 <label for="username">User ID</label>
                 <input type="text" id="username" placeholder="Enter Admin ID" required>
@@ -21,7 +22,7 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" placeholder="Enter Password" required>
             </div>
-            <button type="submit" id="loginBtn">Login</button>
+            <button type="button" id="loginBtn" onclick="handleLogin()">Login</button>
             <p id="errorMsg" class="error-msg"></p>
         </form>
     </div>
